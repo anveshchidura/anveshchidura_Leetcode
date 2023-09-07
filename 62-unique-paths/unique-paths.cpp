@@ -11,7 +11,8 @@ public:
         else{
         int left = rec_func(m,n,i+1,j,dp);
         int right = rec_func(m,n,i,j+1,dp);
-        return dp[i][j] = left + right;
+        dp[i][j] = left + right;
+        return dp[i][j];
         }
     }
     int uniquePaths(int m, int n) {
