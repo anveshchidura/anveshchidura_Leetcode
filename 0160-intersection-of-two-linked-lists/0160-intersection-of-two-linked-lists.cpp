@@ -8,7 +8,8 @@
  */
 class Solution {
 public:
-    ListNode *getIntersectionNode(ListNode *headA, ListNode *headB) {
+    ListNode *getIntersectionNode(ListNode *headA, ListNode *headB) {\
+        if(headA == NULL || headB == NULL){return NULL;}
         ListNode *curra = headA;
         ListNode *currb = headB;
         while(curra!=currb){
