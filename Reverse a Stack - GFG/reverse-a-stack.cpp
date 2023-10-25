@@ -6,43 +6,57 @@ using namespace std;
 
 
 // } Driver Code Ends
-//User function Template for C++
 
-class Solution{
+
+class Solution {
 public:
     void insertAtBottom(stack<int> &s, int element) {
-        
-        //basecase
-        if(s.empty()) {
+        // base case
+        if (s.empty()) {
             s.push(element);
-          	return ;
+            return;
         }
-        
+
         int num = s.top();
         s.pop();
-        
-        //recursive call
+
+        // recursive call
         insertAtBottom(s, element);
-        
+
         s.push(num);
-}
+    }
+
+    int cnt = 0; // Member variable to keep track of the count
 
     void Reverse(stack<int> &St) {
-  	//base case
-        if(St.empty()) {
-            return ;
+        // base case
+        if (cnt == St.size()) {
+            return;
         }
         
-        int num = St.top();
+        int num = St.top(); // Get the top element directly
         St.pop();
-        
-        //recursive call
         Reverse(St);
+        insertAtBottom(St, num); // Insert the element at the bottom
+
+        // Increment the count
+        cnt++;
+
+        // Recursive call
         
-        insertAtBottom(St,num);
-}
-    
+    }
 };
+
+
+
+
+
+
+
+
+
+
+
 
 //{ Driver Code Starts.
 
