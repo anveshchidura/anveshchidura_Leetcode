@@ -11,14 +11,7 @@
  */
 class Solution {
 public:
-    TreeNode* Preorder(TreeNode* &root){
-        if(root == NULL) return nullptr;
-        
-        // Assuming TreeNode has left and right members
-        Preorder(root->left);
-        Preorder(root->right);
-        return root;
-    }
+
 
     TreeNode* searchBST(TreeNode* root, int val) {
         if(root == nullptr) return nullptr; 
@@ -29,7 +22,7 @@ public:
             return searchBST(root->left, val);
         } else {
 
-            return Preorder(root);
+            return root;
         }
     }
 };
