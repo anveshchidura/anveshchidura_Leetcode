@@ -6,16 +6,16 @@ using namespace std;
 class Solution {
   public:
     // Function to return a list containing the DFS traversal of the graph.
-    void dfs(int ind, vector<int> &visited, vector<int> &ans, vector<int> adj[]) {
+
+        void dfs(int ind,vector<int> &visited,vector<int> &ans,vector<int> adj[]){
         for(auto it : adj[ind]){
             if(!visited[it]){
                 visited[it] = 1;
                 ans.push_back(it);
-                dfs(it, visited, ans, adj);  // Corrected the function call here
+                dfs(it,visited,ans,adj);
             }
         }
     }
-    
     vector<int> dfsOfGraph(int V, vector<int> adj[]) {
         vector<int> visited(V, 0);
         visited[0] = 1;
@@ -24,7 +24,7 @@ class Solution {
         dfs(0, visited, ans, adj);  // Corrected the function call here
         return ans;
     }
-    
+
 };
 
 //{ Driver Code Starts.
