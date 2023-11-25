@@ -15,6 +15,7 @@ private:
         return true;
     }
 
+
 public:
     bool isBipartite(vector<vector<int>>& graph) {
         int n = graph.size();
@@ -29,6 +30,4 @@ public:
             }
         }
         return true;
-    }
-};
-
+    }};
