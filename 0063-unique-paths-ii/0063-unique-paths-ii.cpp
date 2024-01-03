@@ -10,8 +10,8 @@ int f(int i,int j,vector<vector<int>>& obstacleGrid,vector<vector<int>> &dp){
     }    
     if(dp[i][j] != -1) { return dp[i][j];};
     
-    int up = i > 0 ? f(i - 1, j, obstacleGrid, dp) : 0;
-    int left = j > 0 ? f(i, j - 1, obstacleGrid, dp) : 0;
+    int up = f(i - 1, j, obstacleGrid, dp) ;
+    int left = f(i, j - 1, obstacleGrid, dp) ;
     
     return dp[i][j] = up + left;
     
